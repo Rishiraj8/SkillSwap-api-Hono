@@ -53,17 +53,13 @@ const app = new Hono<{ Bindings: Bindings }>();
 
 
 //cors Middleware only allows locolhost:5173 to access the server
+//cors Middleware only allows locolhost:5173 and https://skill-swap-xi.vercel.app/ to access the server
 app.use('*', async (c, next) => {
-
-  // CORS middleware configuration
   const corsMiddleware = cors({
-    origin: ['http://localhost:5173','https://'],
-    allowHeaders: ['Origin', 'Content-Type', 'Authorization'],
+    origin: ['http://localhost:5173','https://skill-swap-xi.vercel.app'],
     allowMethods: ['GET', 'OPTIONS', 'POST', 'PUT', 'DELETE'],
     credentials: true,
   })
-
-  // Apply CORS middleware to all routes to allow cross-origin requests
   return await corsMiddleware(c, next)
 })
 
