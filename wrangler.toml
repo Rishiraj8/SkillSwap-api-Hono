@@ -14,5 +14,5 @@ compatibility_date = "2023-12-01"
 
  [[d1_databases]]
  binding = "DB"
- database_name = "skill-api"
- database_id = "74b3c727-b9ad-4d64-847e-9e5df977aecc"
+ database_name = ""
+ database_id = ""
